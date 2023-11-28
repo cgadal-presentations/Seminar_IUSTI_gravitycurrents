@@ -1,0 +1,126 @@
+// /*-- scss:defaults --*/
+
+// $body-bg: #191919;
+// $body-color: #fff;
+// $link-color: #42affa;
+
+/*-- scss:rules --*/
+
+// .reveal section {
+//     border: 2px solid red
+//   }
+
+.reveal .slides ul ul {
+    list-style-type: circle;
+    font-size: 85%;
+}
+
+.reveal .slides figcaption {
+    text-align: center;
+    margin-top: 0px;
+}
+
+.reveal .slides h2 {
+    margin: 30px;
+    text-align: center;
+}
+
+.reveal .slides .important {
+    text-align: center;
+    margin-top: 5%;
+    font-weight: bolder;
+    margin-bottom: 5%;
+
+}
+
+.reveal .slides .small {
+    font-size: smaller;
+}
+
+.reveal .slides .boxed-red {
+    border: 2px solid red;
+}
+
+.reveal .slides .boxed-orange {
+    border: 2px solid lightsalmon;
+    padding: 20px;
+}
+
+.reveal .slides div.centered-block {
+    display: flex;
+    justify-content: center;
+}
+
+.reveal .slides .img-white {
+    background: white;
+}
+
+.reveal .slides .callout .callout-body {
+    display: block;
+    text-align:center;
+}
+
+.reveal .slides .callout {
+    background: $body-bg
+}
+
+.container-hv-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.v-center-container {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+
+.highlight {
+    color: rgb(255, 127, 14);
+}
+
+.highlight-blue {
+    color: rgb(31, 135, 180);
+}
+
+.reveal .slides .callout.callout-style-simple {
+    display: block;
+    text-align:center;
+}
+
+.reveal .slides .mirormedia video,image {
+    transform: scale(-1, 1);
+}
+
+.reveal .slides .mirormedia video::-webkit-media-controls-panel {
+    transform: scale(-1, 1);
+     }
+
+.reveal .slides .rotatemiror video,image {
+    transform: scale(-1, 1) rotate(-7deg)
+}
+
+.reveal .slides .rotatemiror video::-webkit-media-controls-panel {
+    transform: scale(-1, 1)
+     }
+
+.reveal .slides .rotatemiror figcaption {
+    margin-top: 5%
+}
+
+.reveal .slides .rotatemedia video,image {
+    transform: rotate(-7deg);
+}
+
+.reveal .slides .rotatemedia figcaption {
+    margin-top: 5%
+}
+
+.reveal .slides .vert_center {
+    vertical-align: middle;
+}

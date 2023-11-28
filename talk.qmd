@@ -1,0 +1,969 @@
+---
+title: "Turbidity (particle-laden gravity) currents"
+subtitle: "Relevant processes and numbers"
+author: "Cyril Gadal"
+institute: "Institut de Mécanique des Fluides de Toulouse (IMFT), France"
+format:
+  revealjs:
+    theme: [dark, custom.scss]
+    width: 1920
+    height: 1080
+    auto-animate-duration: 0.75
+    auto-animate-unmatched: false
+    callout-icon: false
+    slide-number: true
+    auto-stretch: false
+    viewDistance: 50
+    template-partials:
+      - title-slide.html
+---
+
+## Short personal presentation 
+
+::: {.columns .v-center-container}
+::: {.column width="10%"}
+:::
+::: {.column width="80%"}
+
+::: {data-id="dune" .callout-warning appearance="minimal"}
+## PhD on sand dunes (IPGP/PMMH, 2017--2020)
+![with Clément Narteau & Philippe Claudin](talk_files/src/images/background/dunes.svg){width=90%}
+:::
+
+:::
+::: {.column width="10%"}
+:::
+:::
+
+## Short personal presentation 
+
+:::: {.columns}
+::: {.column width=50%}
+
+::: {data-id="dunes" .callout-warning appearance="minimal"}
+## PhD on sand dunes (IPGP/PMMH, 2017--2020)
+![with Clément Narteau & Philippe Claudin](talk_files/src/images/background/dunes.svg){width=90%}
+:::
+
+:::
+::: {.column width=50%}
+:::
+
+::::
+
+::: {.fragment .columns .v-center-container style="margin-top:-20%"}
+
+::: {.column width="10%"}
+:::
+::: {.column width="80%"}
+
+::: {data-id="turbidity" .callout-tip appearance="minimal"}
+## PostDoc on turbidity currents (IMFT, 2021--2022)
+![with Laurent Lacaze & Matthieu Mercier](talk_files/src/images/background/turbidity_current.svg){width=90%}
+:::
+
+:::
+::: {.column width="10%"}
+:::
+:::
+
+## Short personal presentation 
+
+:::: {.columns}
+::: {.column width=50%}
+
+::: {data-id="dunes" .callout-warning appearance="minimal"}
+## PhD on sand dunes (IPGP/PMMH, 2017--2020)
+![with Clément Narteau & Philippe Claudin](talk_files/src/images/background/dunes.svg){width=90%}
+:::
+
+::: {data-id="turbidity" .callout-tip appearance="minimal"}
+## PostDoc on turbidity currents (IMFT, 2021--2022)
+![with Laurent Lacaze & Matthieu Mercier](talk_files/src/images/background/turbidity_current.svg){width=82%}
+:::
+
+:::
+::: {.column width=50%}
+:::
+::::
+
+::: {.fragment .columns .v-center-container style="margin-top:-45%"}
+
+::: {.column width="10%"}
+:::
+::: {.column width="80%"}
+
+::: {data-id="ofb" .callout-important appearance="minimal"}
+## PostDoc on the cloggind of riverbeds (IMFT, 2023)
+![with Laurent Lacaze & Matthieu Mercier](talk_files/src/images/background/ofb_colmatage.svg){width=90%}
+:::
+
+:::
+::: {.column width="10%"}
+:::
+:::
+
+## Short personal presentation 
+
+:::: {.columns}
+::: {.column width=50%}
+
+::: {data-id="dunes" .callout-warning appearance="minimal"}
+## PhD on sand dunes (IPGP/PMMH, 2017--2020)
+![with Clément Narteau & Philippe Claudin](talk_files/src/images/background/dunes.svg){width=90%}
+:::
+
+::: {data-id="turbidity" .callout-tip appearance="minimal"}
+## PostDoc on turbidity currents (IMFT, 2021--2022)
+![with Laurent Lacaze & Matthieu Mercier](talk_files/src/images/background/turbidity_current.svg){width=82%}
+:::
+
+:::
+::: {.column width=50%}
+
+::: {data-id="ofb" .callout-important appearance="minimal"}
+## PostDoc on the cloggind of riverbeds (IMFT, 2023)
+![with Laurent Lacaze & Matthieu Mercier](talk_files/src/images/background/ofb_colmatage.svg){width=80%}
+:::
+
+:::
+::::
+
+::: {.fragment .columns .v-center-container style="margin-top:-45%"}
+
+::: {.column width="10%"}
+:::
+::: {.column width="80%"}
+
+::: {data-id="manchester" .callout-note appearance="minimal"}
+## PostDoc on the self-organization of cohesive granular flows (Manchester)
+![with Nico Gray & Chris Johnson](talk_files/src/images/background/figure_self_channel.svg){width=90%}
+:::
+
+:::
+::: {.column width="10%"}
+:::
+:::
+
+## Short personal presentation 
+
+:::: {.columns}
+::: {.column width=50%}
+
+::: {data-id="false" .callout-warning appearance="minimal"}
+## PhD on sand dunes (IPGP/PMMH, 2017--2020)
+![with Clément Narteau & Philippe Claudin](talk_files/src/images/background/dunes.svg){width=90%}
+:::
+
+::: {data-id="false" .callout-tip appearance="minimal"}
+## PostDoc on turbidity currents (IMFT, 2021--2022)
+![with Laurent Lacaze & Matthieu Mercier](talk_files/src/images/background/turbidity_current.svg){width=82%}
+:::
+
+:::
+::: {.column width=50%}
+
+::: {data-id="false" .callout-important appearance="minimal"}
+## PostDoc on the cloggind of riverbeds (IMFT, 2023)
+![with Laurent Lacaze & Matthieu Mercier](talk_files/src/images/background/ofb_colmatage.svg){width=80%}
+:::
+
+::: {data-id="manchester" .callout-note appearance="minimal"}
+## PostDoc on the self-organization of cohesive granular flows (Manchester)
+![with Nico Gray & Chris Johnson](talk_files/src/images/background/figure_self_channel.svg){width=90%}
+:::
+
+:::
+::::
+
+
+
+## Particle-laden (turbidity) currents
+
+::: {.columns .v-center-container}
+::: {.column width="100%"}
+
+-   gravity driven flow
+-   excess density = **suspended** particles (maybe combined to temperature, salinity or humidity differences)
+-   ubiquitous in many planetary environements
+
+::: {layout="[[1.005, 1.275, 1.303]]"}
+![Snow avalanche, Zinal, Switzerland @Zacharie Grossen](talk_files/src/images/avalanche.png)
+
+![Pyroclastic flow, Sinabung, Indonesia @Jean-Guillaume Feignon](talk_files/src/images/pyroclastic.png)
+
+![Dust storm, Phoenix, USA @Alan Stark](talk_files/src/images/duststorm.png)
+
+:::
+:::
+:::
+
+## Particle-laden (turbidity) currents
+
+::: {.columns .v-center-container}
+::: {.column width="100%"}
+
+::: {.important}
+[Almost always destructive natural hazards.]{.highlight}
+:::
+
+::: {layout="[[1, 1.33, 1.5]]"}
+![Power transmission overturned by a powder snow avalanche, Switzerland. Caviezel et al. 2021](talk_files/src/images/avalanche_pillar_down.png)
+
+![Dammages by pyroclastic flow after the Merapi eruption, Indonesia. @Noer Cholik](talk_files/src/images/merapi_2010_destruction.jpg)
+
+![Dust storm, Phoenix, USA. @Mike Olbinski](talk_files/src/images/Worldpix_Mike_Olbinski_2.jpg)
+
+
+:::
+:::
+:::
+
+## Hence
+
+::: {.columns .v-center-container}
+::: {.column width="100%"}
+
+::: {.fragment}
+
+-   they need reliable modelling
+    -   closure in large-scale models (meteorological, oceanic, sediment balance, ...)
+    -  shallow flows -\> depth-averaged (shallow water) modelling for hazard assessment
+       
+:::
+
+::: {.important .fragment}
+
+$\rightarrow$ determination of relevant processes and corresponding parameterization
+
+:::
+
+::: {.important .fragment}
+
+But in-situ measurements are hard !!!
+
+  - hard to predict
+  - destructive
+
+:::
+
+:::
+::::
+
+## A simple laboratory system: lock-release devices
+
+::: {.columns .v-center-container}
+::: {.column .rotatemiror width="100%"}
+![Particles: glass beads ($d \sim 120 \mu$m). Ambient: fresh water. Inclination: $\theta = 7^\circ$](talk_files/src/videos/sand80m/run03/output.mp4){width="85%" fig-align="center"}
+:::
+:::
+
+## A simple laboratory system: lock-release devices
+
+::: {.columns .v-center-container}
+::: {.column width="100%"}
+![Particles: glass beads ($d \sim 120 \mu$m). Ambient: fresh water. Inclination: $\theta = 7^\circ$](talk_files/src/images/figure1.svg){width="35%" fig-align="center"}
+
+::: important
+Using [$x_{\rm f}(t)$]{.highlight-blue} and [$h(x, t)$]{.highlight} as proxy for the current morphodynamics
+:::
+:::
+:::
+
+## An extensive literature, especially on saline currents
+
+::: {.columns .v-center-container}
+::: {.column .r-stack width="100%"}
+<!-- ![Rottman and Simpson. 1984, saline water, no slope ($\theta=0^\circ$)](talk_files/src/images/Rottman1983/step1.svg){width="75%" fig-align="center"} -->
+
+![Rottman and Simpson. 1984, saline water, no slope ($\theta=0^\circ$)](talk_files/src/images/Rottman1983/step2.svg){width="75%" fig-align="center"}
+:::
+:::
+
+## Front position and slumping regime
+
+::: {.columns .v-center-container}
+::: {.column .r-stack width="50%"}
+![Rottman and Simpson. 1984, saline water, no slope ($\theta=0^\circ$)](talk_files/src/images/Rottman1983/Rottman1983_0.svg){width="100%"}
+
+![Rottman and Simpson. 1984, saline water, no slope ($\theta=0^\circ$)](talk_files/src/images/Rottman1983/Rottman1983.svg){.fragment width="100%"}
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+-   Scales:
+    -   length: $L_{0}$ (lock length)
+    -   velocity: $u_{0} = \sqrt{h_{0} g'}$, $g' = \frac{\rho_{0} - \rho_{a}}{\rho_{0}}g$
+    -   time: $t_{0} = L_{0}/u_{0}$
+
+<!-- style="color:#eb7f19" -->
+
+::: fragment
+[Slumping (constant-velocity) regime]{.highlight-blue style="text-align:center"}
+
+-   Equilibrium: inertia - pressure gradient at the front: [$u_{\rm c} = \mathcal{F}_{r} u_{0}$]{.highlight}
+-   Duration: until bore comes back: [$t_{\rm bore} = \tau t_{0}$]{.highlight}
+-   constant prefactors: $\mathcal{F}_{r} = 0.5$, $\tau \simeq 20$
+:::
+
+```{=html}
+<!-- ::: {.fragment .important .boxed}
+- What happens for an inclined tank ?
+- Influence of particles ?
+
+$$ \mathcal{F}_{r} = f(?), \, \tau = f(?)$$
+::: -->
+```
+:::
+:::
+
+## Towards more complex situations
+
+[Slumping (constant-velocity) regime]{.highlight-blue style="text-align:center"}
+
+-   Equilibrium: inertia - pressure gradient at the front: [$u_{\rm c} = \mathcal{F}_{r} u_{0}$]{.highlight}
+-   Duration: until bore comes back: [$t_{\rm end} = \tau t_{0}$]{.highlight}
+-   constant prefactors: $\mathcal{F}_{r} = 0.5$, $\tau \simeq 20$
+
+::: {.important .fragment}
+**Horizontal tank, homogenous fluid or particle but low volume fraction/small settling !**
+:::
+
+::: fragment
+Now what happens in more complex systems ?
+
+::: columns
+::: {.column width="33%"}
+-   inclined bottom: $\theta$
+:::
+
+::: {.column width="33%"}
+-   particulate currents
+    -   high volume fractions: $\phi$
+    -   strong settling: $v_{\rm s}$
+    -   unusual particles (hydrogel beads): ??
+:::
+
+::: {.column width="33%"}
+-   triphasic currents: $\delta_{\rho}$
+:::
+:::
+:::
+
+## Experimental setups and datasets
+
+::: {.columns .v-center-container}
+::: {.column width="50%" style="text-align:center"}
+
+::: {.fragment}
+::: {.callout-note appearance="minimal"}
+![C. Gadal, M. Mercier & L. Lacaze](talk_files/src/figures/sketches_IMFT.svg){style="margin:0.5%"}
+:::
+:::
+
+::: { .fragment}
+::: {.callout-warning appearance="minimal"}
+
+![J. Schneider, S. Kiesgen de Richter, Y. Dossmann](talk_files/src/figures/sketches_LEMTA.svg){style="margin:0.5%"}
+
+:::
+:::
+:::
+
+::: {.column width="50%" }
+::: {.fragment}
+::: {.callout-tip appearance="minimal"}
+![Marie Rastello](talk_files/src/figures/sketches_LEGI.svg){style="margin:0.5%"}
+:::
+:::
+
+::: {.fragment}
+::: {.callout-important appearance="minimal"}
+
+$+$ two-fluids simulations (SedFoam)
+
+::: {style="font-size:0.7em"}
+Julien Chauchat, Cyrille Bonamy
+:::
+
+:::
+:::
+:::
+:::
+
+<!-- ## Experimental setups and datasets
+
+::: {.columns .v-center-container}
+::: {.column width="50%" style="text-align:center"}
+
+::: {.callout-note appearance="minimal"}
+![](talk_files/src/videos/sand80m/run03/output.mp4){width="85%" fig-align="center"}
+:::
+
+::: {.callout-warning appearance="minimal"}
+![](talk_files/src/videos/other/phi_40.mp4){width="85%" fig-align="center"}
+:::
+:::
+
+::: {.column width="50%" }
+
+::: {.callout-tip appearance="minimal"}
+![](talk_files/src/videos/other/Legi1.mp4){width="85%" fig-align="center"}
+:::
+
+::: {.callout-important appearance="minimal"}
+$+$ two-fluids simulations (SedFoam)
+:::
+
+:::
+::: -->
+
+## Dimensional analysis
+
+::: columns
+::: {.column width="100%"}
+![](talk_files/src/figures/sketches_general.svg){fig-align="center"}
+:::
+:::
+
+**Experimental parameters:**
+
+::: columns
+::: {.column width="30%"}
+-   Slope $\alpha$
+-   Lock geometry $h_{0}$, $l_{0}$
+:::
+
+::: {.column width="30%"}
+-   [Interstitial fluid density $\rho_{\rm f}$]{style="color: #F3F7D4"}
+   
+-   [Ambient fluid density $\rho_{\rm a}$]{style="color: #8df2f2"}
+:::
+
+::: {.column width="20%"}
+-   [Volume fraction $\phi$]{style="color: peru"}
+
+-   [Particle diameter $d$]{style="color: peru"}
+:::
+
+::: {.column width="20%"}
+-   [Particle density $\rho_{\rm p}$]{style="color: peru"}
+:::
+:::
+
+$\rightarrow \rho_{0} = \phi \rho_{p} + (1-\phi \rho_{\rm f})$
+
+## Dimensional analysis
+
+**Dimensionless numbers as control parameters:**
+
+::: columns
+::: {.column width="45%"}
+-   Slope $\alpha$
+
+-   Reynolds number $\mathcal{R}e = \displaystyle\frac{u_{0}h_{0}}{\nu}$
+
+-   Aspect ratio $a = \displaystyle\frac{h_{0}}{l_{0}}$
+:::
+
+::: {.column width="55%"}
+-   Volume fraction $\phi$
+
+-   Stokes number $\mathcal{S}t = \displaystyle\frac{v_{\rm s}}{u_{0}}\frac{l_{0}}{h_{0}}$
+
+-   Atwood number $\require{cancel} \xcancel{\mathcal{A}t = \displaystyle\frac{\rho_{0} - \rho_{a}}{\rho_{a}}}$ $\rightarrow$ Boussinesq approx.
+:::
+:::
+
+**Scales:**
+
+::: columns
+::: {.column width="25%"}
+-   length: $l_{0}$ (lock length)
+:::
+
+::: {.column width="40%"}
+-   velocity: $u_{0} = \sqrt{h_{0} g'}$, $g' = \frac{\rho_{0} - \rho_{a}}{\rho_{0}}g$
+:::
+
+::: {.column width="25%"}
+-   time: $t_{0} = l_{0}/u_{0}$
+:::
+:::
+
+**Dimensionless observables:**
+
+::: columns
+::: {.column width="25%"}
+-   $\displaystyle\frac{x_{\rm f}}{l_{0}}$
+:::
+
+::: {.column width="25%"}
+-   $\left(\displaystyle\frac{h}{h_{0}}\right)$
+:::
+:::
+
+## Parameter space
+
+::: {.columns .v-center-container}
+::: {.column width="100%"}
+![](talk_files/src/figures/parameter_space.svg){fig-align="center"}
+:::
+:::
+
+## Bulk analysis - 280 experiments
+
+::: {layout-ncol=2 layout-valign="bottom"}
+
+::: {.r-stack}
+
+![](talk_files/src/figures/bulk_position_0.svg){fig-align="center"}
+
+![](talk_files/src/figures/bulk_position_1.svg){fig-align="center" .fragment}
+
+:::
+
+![](talk_files/src/figures/sketch_xf.svg){fig-align="center" style="margin:auto" .fragment}
+
+:::
+
+::: {.fragment style="text-align:center; margin-top:-4%"}
+[$\displaystyle\frac{x_{\rm f}}{l_{0}} = \mathcal{F}r\left[\displaystyle\frac{t}{t_{0}} - \displaystyle\frac{1}{\tau}\left(\displaystyle\frac{t}{t_{0}}\right)^{2} +\,...\right]$]{.highlight}
+:::
+
+## Influence of the slope
+
+$\bullet$ PMMA particles, $\phi \sim 1~\%$
+
+:::: {.columns .v-center-container style="height:80%"}
+
+::: {.column width=50%}
+
+:::: {.columns .v-center-container}
+
+::: {.column width=15% .small}
+
+$\alpha = 0^\circ$
+
+:::
+
+::: {.column width=85%}
+
+![@Marie Rastello, LEGI](talk_files/src/videos/LEGI/PMMA_0degre_crop_X2.5.mp4){width=80% fig-align="center"}
+
+:::
+::::
+
+<!-- :::: {.columns}
+
+::: {.column width=20% .small}
+
+$\alpha=25^\circ$
+
+:::
+
+::: {.column width=80%}
+
+![](talk_files/src/videos/LEGI/PMMA_24degre.mp4){width=80% fig-align="center"}
+
+:::
+:::: -->
+
+:::: {.columns .v-center-container}
+
+::: {.column width=15% .small}
+
+$\alpha = 45^\circ$
+
+:::
+
+::: {.column width=85%}
+
+![@Marie Rastello, LEGI](talk_files/src/videos/LEGI/PMMA2_sans_fond.mp4){width=80% fig-align="center"}
+:::
+::::
+
+
+:::
+
+::: {.column width=50%}
+
+![](talk_files/src/figures/figure_nose_position_slope.svg){.fragment fragment-index=1 fig-align="center"}
+
+:::
+
+::::
+
+## Influence of the slope
+
+![](talk_files/src/figures/figure_slope_0.svg){fig-align="center"}
+
+::: {.fragment .highlight .important style="margin-top:-2%"}
+Slumping dimensionless velocity increase with slope !
+:::
+
+## Influence of the slope -- A non-trivial increase
+
+<!-- ::: {style="text-align:center"} -->
+**A first interpretation**: slope-induced acceleration increases velocity
+<!-- ::: -->
+
+::: fragment
+::: {style="text-align:center"}
+**But**
+:::
+:::
+
+::: {.incremental}
+-   Issue 1: constant velocity $\leftrightarrow$ equilibrium (inertia / pressure gradient)
+
+-   Issue 2: slope-induced acceleration takes a time $t_{\theta} \sim 4\displaystyle\frac{t_{0}}{\sin\theta}$ to be significant (Birman et al. 2007), so usually $t_{\theta} \gg \tau t_{0}$
+:::
+
+::: fragment
+**Hypothesis (unverified)**: slope acts during the early transient regime
+
+::: columns
+::: {.column width="50%"}
+![Adapted from Cantero et al. 2007](talk_files/src/images/Cantero2007/velocity_pos.svg){height="400px"}
+:::
+
+::: {.column width="50%"}
+![Adapted from Cantero et al. 2007](talk_files/src/images/Cantero2007/slumping.svg){height="400px"}
+:::
+:::
+:::
+
+## Influence of the slope -- A simple model
+
+An energetic balance between the initial state and the end of the transient phase:
+
+$$
+\underbrace{C \Delta\rho g \cos\alpha h_{0}}_{\textrm{initial}} -\underbrace{\left[\frac{1}{2}\rho_{0}u_{\text c}^{2} + A \Delta\rho g \cos\alpha h_{0} - B \Delta\rho g \sin\alpha L\right]}_{\textrm{final}}  =  \underbrace{\frac{1}{2}c_{\text d}\rho_{0}u_{\text c}^{2} \frac{L}{h_{0}}}_{\textrm{dissipation}}
+$$
+
+::: {.r-stack}
+<!-- ![Adapted from Cantero et al. 2007](talk_files/src/images/Cantero2007/initial_final_sketch.svg){width="50%" style="margin:0"}
+ -->
+
+![Adapted from Cantero et al. 2007](talk_files/src/images/Cantero2007/initial_final_sketch_1.svg){width="50%" style="margin:0"}
+:::
+
+::: {.r-stack}
+::: {.fragment}
+$$
+\mathcal{F}r = \frac{u_{\text c}}{u_0} = \frac{Fr_0}{\sqrt{1 + C_{\text D}}} \sqrt{1 + \frac{\tan\alpha}{S}}
+$$
+:::
+
+::: {.fragment}
+$$
+\mathcal{F}r = \frac{u_{\text c}}{u_0} = \frac{\color{orange}{Fr_0}}{\sqrt{1 + \color{orange}{C_{\text D}}}} \sqrt{1 + \frac{\tan\alpha}{\color{orange}{S}}}
+$$
+:::
+:::
+
+
+## Influence of the slope -- A simple model
+
+::: {.r-stack}
+![](talk_files/src/figures/figure_slope_0.svg){fig-align="center"}
+
+![](talk_files/src/figures/figure_slope_1.svg){fig-align="center" .fragment}
+
+![](talk_files/src/figures/figure_slope_2.svg){fig-align="center" .fragment}
+
+:::
+
+## Influence of the volume fraction ($\alpha\sim 0^\circ$)
+
+::: {.r-stack}
+![](talk_files/src/figures/figure_phi_0.svg){fig-align="center"}
+
+![](talk_files/src/figures/figure_phi_1.svg){fig-align="center" .fragment}
+:::
+
+::: {.fragment .highlight .important style="margin-top:-0.5%"}
+Slumping dimensionless velocity decreases with $\phi$ !
+:::
+
+## Influence of the volume fraction ($\alpha\sim 0^\circ$) -- A non-trivial increase
+
+<!-- ::: {style="text-align:center"} -->
+**A first interpretation**: particle-induced dissipation decreases velocity
+<!-- ::: -->
+
+::: fragment
+::: {style="text-align:center"}
+**But**
+:::
+:::
+
+::: {.incremental}
+- Issue 1: constant velocity $\rightarrow$ equilibrium (inertia / pressure gradient)
+
+- Issue 2: dissipation takes a time $t_{\nu}/t_{0} \gg \tau$ (Huppert \& Simpson 1980, Bonnecaze et al. 1993)
+:::
+
+::: fragment
+**Hypothesis (unverified)**: slope acts during the early transient regime
+
+::: columns
+::: {.column width="50%"}
+![Adapted from Cantero et al. 2007](talk_files/src/images/Cantero2007/velocity_pos.svg){height="400px"}
+:::
+
+::: {.column width="50%"}
+![Adapted from Cantero et al. 2007](talk_files/src/images/Cantero2007/slumping.svg){height="400px"}
+:::
+:::
+:::
+
+## Influence of the volume fraction ($\alpha\sim 0^\circ$) -- A simple model
+
+An energetic balance between the initial state and the end of the transient phase:
+
+::: {.incremental}
+- $\underbrace{C \Delta\rho g \cos\alpha h_{0}}_{\textrm{initial}} -\underbrace{\left[\frac{1}{2}\rho_{0}u_{\text c}^{2} + A \Delta\rho g \cos\alpha h_{0} - B \Delta\rho g \sin\alpha L\right]}_{\textrm{final}}  =  \underbrace{\frac{1}{2}c_{\text d}\rho_{0}u_{\text c}^{2} \frac{L}{h_{0}}}_{\textrm{dissipation}}$
+
+- $c_{\rm d} \equiv c_{\text d}\left(1 + \frac{E}{\mathcal{R}e}\frac{u_0}{u_{\text c}}\frac{\eta_{\text eff}}{\eta_{\text f}} \right)$, $\eta_{\rm eff}(\phi)$ effective viscosity (i.e Krieger & Dougherty 1959, Boyer et al. 2011, ...)
+:::
+
+![Adapted from Cantero et al. 2007](talk_files/src/images/Cantero2007/initial_final_sketch_1.svg){width=50%}
+
+::: {.r-stack}
+::: {.fragment}
+$$
+\mathcal{F}r  =  \frac{1}{1 + C_{\text D}} \left[-\frac{Re_{\text c}}{\mathcal{R}e}\frac{\eta_{\text eff}}{\eta_{\text f}} +\sqrt{\left(\frac{Re_{\text c}}{\mathcal{R}e}\frac{\eta_{\text eff}}{\eta_{\text f}} \right)^{2} + Fr_0^{2} \left(1 + \left[1 + C_{\text D}\right]\frac{\tan\alpha}{S} \right)}  \right]
+$$
+:::
+
+::: {.fragment}
+$$
+\mathcal{F}r  =  \frac{1}{1 + C_{\text D}} \left[-\frac{\color{orange}{Re_{\text c}}}{\mathcal{R}e}\frac{\eta_{\text eff}}{\eta_{\text f}} +\sqrt{\left(\frac{\color{orange}{Re_{\text c}}}{\mathcal{R}e}\frac{\eta_{\text eff}}{\eta_{\text f}} \right)^{2} + Fr_0^{2} \left(1 + \left[1 + C_{\text D}\right]\frac{\tan\alpha}{S} \right)}  \right]
+$$
+:::
+:::
+
+## Influence of $\phi$ ($\alpha\sim 0^\circ$) -- A simple model
+
+<!-- $$
+\mathcal{F}r  =  \frac{1}{1 + C_{\text D}} \left[-\frac{Re_{\text c}}{\mathcal{R}e}\frac{\eta_{\text eff}}{\eta_{\text f}} +\sqrt{\left(\frac{Re_{\text c}}{\mathcal{R}e}\frac{\eta_{\text eff}}{\eta_{\text f}} \right)^{2} + Fr_0^{2} \left(1 + \left[1 + C_{\text D}\right]\frac{\tan\alpha}{S} \right)}  \right]
+$$ -->
+
+::: {.columns .v-center-container}
+::: {.column width="100%"}
+
+::: {.r-stack}
+![](talk_files/src/figures/figure_phi_1.svg){fig-align="center"}
+
+![](talk_files/src/figures/figure_phi_2.svg){fig-align="center" .fragment}
+:::
+
+:::
+:::
+
+## Influence of $\mathcal{S}$t (settling)
+
+$\bullet$ $\theta=7^\circ$, $\mathcal{R}_{e} \simeq 6{\times}10^{4}$
+
+:::: {.columns .v-center-container style="height:80%"}
+
+::: {.column width=60%}
+
+:::: {.columns}
+
+::: {.column width=20% .small}
+
+$d \sim 60~\mu$m, $\mathcal{S} = 0.01$
+
+:::
+
+::: {.column width=80% .rotatemiror}
+
+![](talk_files/src/videos/silibeads40m_70m/run02/output.mp4){width=80% fig-align="center"}
+
+:::
+::::
+
+:::: {.columns}
+
+::: {.column width=20% .small}
+
+$d \sim 135~\mu$m, $\mathcal{S} = 0.04$
+
+:::
+
+::: {.column width=80% .rotatemiror}
+
+![](talk_files/src/videos/silibeads120m/run02/output.mp4){width=80% fig-align="center"}
+
+:::
+::::
+
+:::: {.columns}
+
+::: {.column width=20% .small}
+
+$d \sim 250~\mu$m
+
+$\mathcal{S} = 0.1$
+
+:::
+
+::: {.column width=80% .rotatemiror}
+
+![](talk_files/src/videos/silibeads200m_300m/run02/output.mp4){width=80% fig-align="center"}
+:::
+::::
+
+
+:::
+
+::: {.column width=40%}
+
+![](talk_files/src/figures/settling_velocity_nose_propagation.svg){.fragment fragment-index=1 width=100% fig-align="center"}
+
+:::
+
+::::
+
+## Influence of $\mathcal{S}$t (settling)
+
+::: {.r-stack}
+
+![](talk_files/src/figures/figure_stokes_0.svg){fig-align="center"}
+
+![](talk_files/src/figures/figure_stokes_1.svg){.fragment fig-align="center" fragment-index=1}
+
+![](talk_files/src/figures/figure_stokes_2.svg){.fragment fragment-index=3 fig-align="center"}
+
+:::
+
+:::: {.columns}
+
+::: {.column width=50% .fragment fragment-index=2}
+
+ - "Bore" dominated regime: $\tau \propto \frac{t_{\rm bore}}{t_{0}}= cste$
+
+:::
+::: {.column width=50% .fragment fragment-index=3}
+
+ - Settling dominated regime: $\tau \propto \frac{t_{\rm sed}}{t_{0}} = \frac{h_{0}}{v_{\rm s}} \frac{u_{0}}{l_{0}} = \mathcal{S}t$
+
+:::
+::::
+
+## In a nutshell, $x_{\rm f}(t)$ during the slumping regime:
+
+:::: {.columns}
+::: {.column width=50% .fragment}
+::: {.callout-note appearance="minimal"}
+## Slumping velocity $\mathcal{F}r$ increases with $\alpha$
+
+![](talk_files/src/figures/figure_slope_2.svg){width=75% style="margin:0"}
+
+:::
+:::
+::: {.column width=50% .fragment}
+::: {.callout-warning appearance="minimal"}
+## Slumping velocity $\mathcal{F}r$ decreases with $\phi$
+
+![](talk_files/src/figures/figure_phi_2.svg){width=75% style="margin:0"}
+
+:::
+:::
+::::
+
+:::: {.columns}
+::: {.column width=25%}
+:::
+::: {.column width=50% .fragment}
+::: {.callout-important appearance="minimal"}
+## For $\mathcal{S}t > 10^{-2}$, slumping duration $\tau \propto \mathcal{S}t^{-1}$
+
+![](talk_files/src/figures/figure_stokes_2.svg){width=75% style="margin:0"}
+
+:::
+:::
+::: {.column width=25%}
+:::
+::::
+
+## What about current shapes $h(x, t)$ ?
+
+:::: {.columns .v-center-container}
+::: {.column width="100%"}
+![](talk_files/src/images/figure1.svg){width="35%" fig-align="center"}
+
+:::
+::::
+
+## What about current shapes $h(x, t)$ ?
+
+:::: {.columns .v-center-container}
+::: {.column width="100%" .r-stack}
+![All current shapes during slumping regime superimposed.](talk_files/src/figures/figure_single_shape_0.svg){fig-align="center"}
+
+![All current shapes during slumping regime superimposed.](talk_files/src/figures/figure_single_shape_1.svg){fig-align="center" .fragment}
+:::
+::::
+
+## What about current shapes $h(x, t)$ ?
+
+:::: {.columns}
+::: {.column width="100%" .r-stack}
+![Multiple average shapes superimposed.](talk_files/src/figures/figure_av_shapes_0.svg){fig-align="center"}
+
+![Multiple average shapes superimposed.](talk_files/src/figures/figure_av_shapes_1.svg){fig-align="center" .fragment}
+
+![Multiple average shapes superimposed.](talk_files/src/figures/figure_av_shapes_2.svg){fig-align="center" .fragment}
+:::
+::::
+
+::: {.fragment style="margin-top:3%"}
+:::: {.columns}
+
+::: {.column width=33%}
+ - influence of $\mathcal{S}t$ ?
+:::
+
+::: {.column width=33%}
+- influence of $\alpha$ ?
+:::
+
+::: {.column width=33%}
+- influence of $\phi$, $\mathcal{R}e$ ?
+:::
+::::
+:::
+
+## What about current internal structure $\vec{u}(z)$, $\phi(z)$ ?
+
+- Is $u_{\rm f}$, $h(x)$ enough to describe the dynamics ?
+
+::: {.fragment}
+::: {.important}
+
+$\rightarrow$ Use of steady influx set-ups !
+
+:::
+
+![Steady injection of (saline water + polystyrene beads) into fresh water.](talk_files/src/videos/MANIP_JEAN/manip8.mp4){fig-align="center"}
+
+:::
+
+## What about current internal structure $\vec{u}(z)$, $\phi(z)$ ?
+
+- 1st round: 3 saline density currents with $\rho_{\rm c} \in [1015, 1050, 1080]~\textrm{kg}~\textrm{m}^{-3}$
+- 2nd round: same at first round + adding $3~\%$ of particles at $\rho_{\rm p} = 1050~\textrm{kg}~\textrm{m}^{-3}$.
+
+:::: {.columns}
+::: {.column width="100%" .r-stack}
+![](talk_files/src/figures/figure_stdy_injection_0.svg){fig-align="center" .fragment}
+
+![](talk_files/src/figures/figure_stdy_injection_1.svg){fig-align="center" .fragment}
+:::
+::::
