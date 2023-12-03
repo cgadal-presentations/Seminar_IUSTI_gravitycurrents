@@ -79,6 +79,7 @@ for dir in dirs:
     DATA[fmt]["vscale"] = unp.sqrt(DATA[fmt]["gprime"] * DATA[fmt]["H0"])
     DATA[fmt]["REYNOLDS"] = Reynolds(DATA[fmt]["vscale"], H0, DATA[fmt]["rho_m"], mu)
     DATA[fmt]["Settling number"] = DATA[fmt]["settling_velocity"] * 1e-2 / DATA[fmt]["vscale"]
+    DATA[fmt]["Stokes"] = DATA[fmt]["Settling number"] * L_reservoir / H0
     DATA[fmt]["position"] = [Position_processed[run][ind]["position"] for run in DATA[fmt]["runs"]]
     DATA[fmt]["time"] = [Position_processed[run][ind]["time"] for run in DATA[fmt]["runs"]]
     DATA[fmt]["t0"] = [Position_processed[run][ind]["virtual_time_origin"] for run in DATA[fmt]["runs"]]

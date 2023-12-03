@@ -35,7 +35,7 @@ format:
 :::
 :::
 
-## Short personal presentation 
+## A brief introduction of myself 
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -51,11 +51,11 @@ format:
 
 ::::
 
-::: {.fragment .columns .v-center-container style="margin-top:-20%"}
+::: {.columns .v-center-container style="margin-top:-20%"}
 
 ::: {.column width="10%"}
 :::
-::: {.column width="80%"}
+::: {.column width="80%" style="z-index:1"}
 
 ::: {data-id="turbidity" .callout-tip appearance="minimal"}
 ## PostDoc on turbidity currents (IMFT, 2021--2022)
@@ -87,11 +87,11 @@ format:
 :::
 ::::
 
-::: {.fragment .columns .v-center-container style="margin-top:-45%"}
+::: {.columns .v-center-container style="margin-top:-45%"}
 
 ::: {.column width="10%"}
 :::
-::: {.column width="80%"}
+::: {.column width="80%" style="z-index:1"}
 
 ::: {data-id="ofb" .callout-important appearance="minimal"}
 ## PostDoc on the cloggind of riverbeds (IMFT, 2023)
@@ -129,11 +129,11 @@ format:
 :::
 ::::
 
-::: {.fragment .columns .v-center-container style="margin-top:-45%"}
+::: {.columns .v-center-container style="margin-top:-45%"}
 
 ::: {.column width="10%"}
 :::
-::: {.column width="80%"}
+::: {.column width="80%" style="z-index:1"}
 
 ::: {data-id="manchester" .callout-note appearance="minimal"}
 ## PostDoc on the self-organization of cohesive granular flows (Manchester)
@@ -150,9 +150,11 @@ format:
 :::: {.columns}
 ::: {.column width=50%}
 
+::: {.fragment .semi-fade-out fragment-index=1 style="margin-right:0.35em"}
 ::: {data-id="false" .callout-warning appearance="minimal"}
 ## PhD on sand dunes (IPGP/PMMH, 2017--2020)
 ![with Clément Narteau & Philippe Claudin](talk_files/src/images/background/dunes.svg){width=90%}
+:::
 :::
 
 ::: {data-id="false" .callout-tip appearance="minimal"}
@@ -163,14 +165,18 @@ format:
 :::
 ::: {.column width=50%}
 
+::: {.fragment .semi-fade-out fragment-index=1 style="margin-left:0.35em"}
 ::: {data-id="false" .callout-important appearance="minimal"}
 ## PostDoc on the cloggind of riverbeds (IMFT, 2023)
 ![with Laurent Lacaze & Matthieu Mercier](talk_files/src/images/background/ofb_colmatage.svg){width=80%}
 :::
+:::
 
+::: {.fragment .semi-fade-out fragment-index=1 style="margin-left:0.35em"}
 ::: {data-id="manchester" .callout-note appearance="minimal"}
 ## PostDoc on the self-organization of cohesive granular flows (Manchester)
 ![with Nico Gray & Chris Johnson](talk_files/src/images/background/figure_self_channel.svg){width=90%}
+:::
 :::
 
 :::
@@ -227,8 +233,9 @@ format:
 ::: {.fragment}
 
 -   they need reliable modelling
-    -   closure in large-scale models (meteorological, oceanic, sediment balance, ...)
     -  shallow flows -\> depth-averaged (shallow water) modelling for hazard assessment
+    -   closure in large-scale models (meteorological, oceanic, sediment balance, ...)
+
        
 :::
 
@@ -240,10 +247,11 @@ $\rightarrow$ determination of relevant processes and corresponding parameteriza
 
 ::: {.important .fragment}
 
-But in-situ measurements are hard !!!
+But in-situ measurements are difficult !!!
 
   - hard to predict
   - destructive
+  - many processes involved
 
 :::
 
@@ -294,9 +302,9 @@ Using [$x_{\rm f}(t)$]{.highlight-blue} and [$h(x, t)$]{.highlight} as proxy for
 
 ::: {.column width="45%"}
 -   Scales:
-    -   length: $L_{0}$ (lock length)
+    -   length: $l_{0}$ (lock length)
     -   velocity: $u_{0} = \sqrt{h_{0} g'}$, $g' = \frac{\rho_{0} - \rho_{a}}{\rho_{0}}g$
-    -   time: $t_{0} = L_{0}/u_{0}$
+    -   time: $t_{0} = l_{0}/u_{0}$
 
 <!-- style="color:#eb7f19" -->
 
@@ -352,7 +360,7 @@ Now what happens in more complex systems ?
 :::
 :::
 
-## Experimental setups and datasets
+## Experimental setups and datasets (ANR PALAGRAM)
 
 ::: {.columns .v-center-container}
 ::: {.column width="50%" style="text-align:center"}
@@ -463,9 +471,10 @@ $\rightarrow \rho_{0} = \phi \rho_{p} + (1-\phi \rho_{\rm f})$
 ::: {.column width="45%"}
 -   Slope $\alpha$
 
+-   Aspect ratio $a = \displaystyle\frac{h_{0}}{l_{0}}$
+
 -   Reynolds number $\mathcal{R}e = \displaystyle\frac{u_{0}h_{0}}{\nu}$
 
--   Aspect ratio $a = \displaystyle\frac{h_{0}}{l_{0}}$
 :::
 
 ::: {.column width="55%"}
@@ -529,8 +538,17 @@ $\rightarrow \rho_{0} = \phi \rho_{p} + (1-\phi \rho_{\rm f})$
 
 :::
 
+::: {.r-stack}
+
+
 ::: {.fragment style="text-align:center; margin-top:-4%"}
-[$\displaystyle\frac{x_{\rm f}}{l_{0}} = \mathcal{F}r\left[\displaystyle\frac{t}{t_{0}} - \displaystyle\frac{1}{\tau}\left(\displaystyle\frac{t}{t_{0}}\right)^{2} +\,...\right]$]{.highlight}
+$\displaystyle\frac{x_{\rm f}}{l_{0}} = \mathcal{F}r\left[\displaystyle\frac{t}{t_{0}} - \displaystyle\frac{1}{\tau}\left(\displaystyle\frac{t}{t_{0}}\right)^{2} +\,...\right]$
+:::
+
+::: {.fragment style="text-align:center; margin-top:-4%"}
+$\displaystyle\frac{x_{\rm f}}{l_{0}} = \color{orange}{\mathcal{F}r}\left[\displaystyle\frac{t}{t_{0}} - \displaystyle\frac{1}{\color{orange}{\tau}}\left(\displaystyle\frac{t}{t_{0}}\right)^{2} +\,...\right]$
+:::
+
 :::
 
 ## Influence of the slope
@@ -708,7 +726,7 @@ Slumping dimensionless velocity decreases with $\phi$ !
 :::
 
 ::: fragment
-**Hypothesis (unverified)**: slope acts during the early transient regime
+**Hypothesis (unverified)**: dissipation acts during the early transient regime
 
 ::: columns
 ::: {.column width="50%"}
@@ -781,7 +799,7 @@ $d \sim 60~\mu$m, $\mathcal{S} = 0.01$
 
 :::
 
-::: {.column width=80% .rotatemiror}
+::: {.column width=78% .rotatemiror}
 
 ![](talk_files/src/videos/silibeads40m_70m/run02/output.mp4){width=80% fig-align="center"}
 
@@ -796,7 +814,7 @@ $d \sim 135~\mu$m, $\mathcal{S} = 0.04$
 
 :::
 
-::: {.column width=80% .rotatemiror}
+::: {.column width=78% .rotatemiror}
 
 ![](talk_files/src/videos/silibeads120m/run02/output.mp4){width=80% fig-align="center"}
 
@@ -807,15 +825,14 @@ $d \sim 135~\mu$m, $\mathcal{S} = 0.04$
 
 ::: {.column width=20% .small}
 
-$d \sim 250~\mu$m
-
-$\mathcal{S} = 0.1$
+$d \sim 250~\mu$m, $\mathcal{S} = 0.1$
 
 :::
 
-::: {.column width=80% .rotatemiror}
+::: {.column width=78% .rotatemiror}
 
 ![](talk_files/src/videos/silibeads200m_300m/run02/output.mp4){width=80% fig-align="center"}
+
 :::
 ::::
 
@@ -965,5 +982,25 @@ $\rightarrow$ Use of steady influx set-ups !
 ![](talk_files/src/figures/figure_stdy_injection_0.svg){fig-align="center" .fragment}
 
 ![](talk_files/src/figures/figure_stdy_injection_1.svg){fig-align="center" .fragment}
+:::
+::::
+
+## What about unusual beads ?
+
+:::: {.columns}
+::: {.column width="100%" .r-stack}
+![](talk_files/src/figures/figure_slope_0.svg){fig-align="center" .fragment}
+
+![](talk_files/src/figures/figure_slope_3.svg){fig-align="center" .fragment}
+:::
+::::
+
+## What about unusual beads ?
+
+:::: {.columns .v-center-container}
+::: {.column width="100%"}
+
+![Hydrogel beads ($d \sim 1~\textrm{cm}$) down a slope ($\alpha = 45^\circ$) from a non-suspended initial condition.](talk_files/src/videos/LEGI/grosse_hydrogel_mieux.mp4){width="60%" fig-align="center"}
+
 :::
 ::::

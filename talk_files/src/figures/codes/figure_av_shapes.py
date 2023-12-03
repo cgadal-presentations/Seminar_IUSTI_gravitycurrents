@@ -90,6 +90,11 @@ SHAPES = np.load(os.path.join(data_dir, "av_shapes/Av_shapes.npy"), allow_pickle
 SHAPES_props = np.load(os.path.join(data_dir, "av_shapes_log/Shape_logs_props.npy"), allow_pickle=True).item()
 
 # Loading initial parameters
+g = 9.81  # [m/s2]
+rho_f = ufloat(0.998, 0.001) * 1e3  # [kg/m3]
+rho_p = ufloat(2.65, 0.02) * 1e3  # [kg/m3]
+mu = ufloat(8.90, 1) * 10**-4  # water dynamic viscosity [kg/(m·s)]
+#
 L_reservoir = ufloat(9.9, 0.2)  # [cm]
 W_reservoir = ufloat(19.4, 0.2)  # [cm]
 #
@@ -110,22 +115,26 @@ colors[:, -1] = 1
 examples = ["run01", "run03", "run11", "run19", "run15", "run02"]
 
 for ifig in range(3):
-    print("draw figures")
     figsize = (1.3 * quarto.regular_fig_width, 0.75 * quarto.regular_fig_height)
     fig, ax = plt.subplots(1, 1, constrained_layout=True, figsize=figsize)
 
     for run, color, phi in zip(runs_sorted, colors, phi_sorted):
         H0 = Parameters[run]["V_reservoir"] / W_reservoir / L_reservoir  # [cm]
+        rho_m = Parameters[run]["Current density"] * 1e3
+        gprime = (rho_m - rho_f) * g / rho_f
+        vscale = unp.sqrt(gprime * H0)
+        v_s = Parameters[run]["settling_velocity"]
+        St = (v_s / vscale) * L_reservoir / H0
         if run in examples:
             ax.plot(
                 SHAPES[run]["xcenters"] / L_reservoir.n,
                 unp.nominal_values(SHAPES[run]["shape"]) / H0.n,
-                label=f"${100 * phi.n:.1f}$",
+                label=f"${St.n:.2f}$",
                 color=color,
             )
     if ifig > 0:
         ax.axvline(-1, color="w", ls="--")
-    fig.legend(title=r"$\phi~[\%]$", loc="outside right center")
+    fig.legend(title=r"$\mathcal{S}t$", loc="outside right center")
     #
     if ifig > 1:
         xplot = np.linspace(-12, 0, 100)

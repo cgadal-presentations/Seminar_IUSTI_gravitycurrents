@@ -89,7 +89,7 @@ Fr_th = Froude(alpha_plot, eta, 7e4)
 
 # %% figure
 
-for ifig in range(3):
+for ifig in range(4):
     figsize = (1.3 * quarto.regular_fig_width, quarto.regular_fig_height)
     fig, ax = plt.subplots(1, 1, figsize=figsize, constrained_layout=True)
 
@@ -113,11 +113,14 @@ for ifig in range(3):
     #     label="simulations of\nBirman et al. 2007",
     # )
 
-    if ifig > 0:
+    if ifig in [1, 2]:
         (line_theory,) = ax.plot(ang2sin(alpha_plot), Fr_th, ls="-", zorder=-8, lw=1, label="eq. (15)", color="w")
 
-    if ifig > 1:
+    if ifig == 2:
         ellipse = Ellipse((0, 0.35), 0.05, 0.55, facecolor="none", edgecolor="w")
+        ax.add_patch(ellipse)
+    if ifig == 3:
+        ellipse = Ellipse((0.71, 0.75), 0.05, 0.8, facecolor="none", edgecolor="w")
         ax.add_patch(ellipse)
 
     ax.set_xlabel(r"$\sin \alpha$")
