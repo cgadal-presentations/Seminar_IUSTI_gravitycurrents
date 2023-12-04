@@ -9,10 +9,10 @@ It can be found online [here](https://cgadal-presentations.github.io/Seminar_IUS
 
 # Licence
 
-The content, including but not only text, photos and videos are under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International license](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode), which allows download and share with others as long as they credit accordingly, but they can’t change them in any way or use them commercially.
+The content, including but not only text, photos and videos are under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en), which allows download and share with others as long as they credit accordingly, but they can’t change them in any way or use them commercially.
 
 # Acknowledgements
 
 - Marie Rastello, from LEGI, for the videos in `/talk_files/src/videos/LEGI/`
-- Jean Schneider, from LEMTA, for the video in `/talk_files/src/videos/Manip_JEAN/`LEGI
+- Jean Schneider, from LEMTA, for the video in `/talk_files/src/videos/Manip_JEAN/`
 - Everyone involved in the [PALAGRAM ANR](https://anr.fr/Projet-ANR-19-CE30-0041) 
