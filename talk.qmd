@@ -1000,7 +1000,7 @@ $\rightarrow$ Use of steady influx set-ups !
 :::: {.columns .v-center-container}
 ::: {.column width="100%"}
 
-![Hydrogel beads ($d \sim 1~\textrm{cm}$) down a slope ($\alpha = 45^\circ$) from a non-suspended initial condition.](talk_files/src/videos/LEGI/grosse_hydrogel_mieux.mp4){width="60%" fig-align="center"}
+![Hydrogel beads ($d \sim 1~\textrm{cm}$) down a slope ($\alpha = 45^\circ$) from a non-suspended initial condition (@Marie Rastello, LEGI).](talk_files/src/videos/LEGI/grosse_hydrogel_mieux.mp4){width="60%" fig-align="center"}
 
 :::
 ::::
